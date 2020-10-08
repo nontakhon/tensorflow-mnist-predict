@@ -69,3 +69,9 @@ or
 The first script, predict_1.py, uses the model.ckpt file created by the create_model_1.py script. The second script, predict_2.py, uses the model2.ckpt file created by the create_model_2.py script. 
 
 
+## How to run
+docker-compose run app
+# train 
+python create_model_1.py number_epoch
+# test
+python predict_1_path.py folder
