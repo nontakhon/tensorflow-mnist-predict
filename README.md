@@ -74,4 +74,4 @@ docker-compose run app
 # train 
 python create_model_1.py number_epoch
 # test
-python predict_1_by_folder.py folder_store_imgae
+python predict_1_path.py folder
