@@ -26,7 +26,7 @@ https://www.tensorflow.org/versions/master/tutorials/mnist/beginners/index.html
 #import modules
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
-
+import sys
 #import data
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
 
@@ -52,9 +52,10 @@ The use of 'with tf.Session() as sess:' is taken from the Tensor flow documentat
 on on saving and restoring variables.
 https://www.tensorflow.org/versions/master/how_tos/variables/index.html
 """
+eporch = int(sys.argv[1])
 with tf.Session() as sess:
     sess.run(init_op)
-    for i in range(3000):
+    for i in range(eporch):
         batch_xs, batch_ys = mnist.train.next_batch(100)
         sess.run(train_step, feed_dict={x: batch_xs, y_: batch_ys})
         
