@@ -41,7 +41,7 @@ y_ = tf.placeholder(tf.float32, [None, 10])
 cross_entropy = -tf.reduce_sum(y_*tf.log(y))
 train_step = tf.train.GradientDescentOptimizer(0.01).minimize(cross_entropy)
 
-init_op = global_variables_initializer()
+init_op = tf.global_variables_initializer()
 saver = tf.train.Saver()
 
 
@@ -54,7 +54,7 @@ https://www.tensorflow.org/versions/master/how_tos/variables/index.html
 """
 with tf.Session() as sess:
     sess.run(init_op)
-    for i in range(1000):
+    for i in range(3000):
         batch_xs, batch_ys = mnist.train.next_batch(100)
         sess.run(train_step, feed_dict={x: batch_xs, y_: batch_ys})
         
